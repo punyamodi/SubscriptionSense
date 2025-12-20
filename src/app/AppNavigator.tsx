@@ -2,26 +2,54 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { useUserStore } from '../state/client/userStore';
-import { useOnboardingStore } from '../state/client/onboardingStore';
 import AuthNavigator from './AuthNavigator';
-import TabsNavigator from '../screens/tabs/TabsNavigator';
+import MainStack from './MainStack';
 import AppLaunchScreen from '../screens/launch/AppLaunchScreen';
 import { useMe } from '../services/user/queries';
 
+import { DarkTheme as NavDarkTheme, DefaultTheme as NavLightTheme } from '@react-navigation/native';
+import { useTheme } from '../theme/ThemeContext';
+
+const linking = {
+  prefixes: ['subsync://', 'https://subsync.app'],
+  config: {
+    screens: {
+      // If logged in
+      MainTabs: {
+        screens: {
+          Dashboard: 'dashboard',
+          Calendar: 'calendar',
+          SubscriptionList: 'subscriptions',
+          Settings: 'settings',
+        },
+      },
+      AddSubscription: 'add',
+      EditProfile: 'profile',
+      
+      // If logged out
+      SignIn: 'signin',
+      SignUp: 'signup',
+      Landing: 'welcome',
+    },
+  },
+};
+
 export default function AppNavigator() {
+  const { isDark, colors } = useTheme();
   const isLoggedIn = useUserStore((s) => s.isLoggedIn);
   const uid = useUserStore((s) => s.uid);
   const [launchDone, setLaunchDone] = useState(false);
   const { data: me } = useMe(uid);
-
+  
   if (!launchDone) {
     return <AppLaunchScreen onAnimationEnd={() => setLaunchDone(true)} />;
   }
 
-  const finished = !!me?.hasFinishedOnboarding;
+  const theme = isDark ? NavDarkTheme : NavLightTheme;
+
   return (
-    <NavigationContainer>
-      {isLoggedIn && finished ? <TabsNavigator /> : <AuthNavigator />}
+    <NavigationContainer theme={theme} linking={linking}>
+      {isLoggedIn ? <MainStack /> : <AuthNavigator />}
     </NavigationContainer>
   );
 }

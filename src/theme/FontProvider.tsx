@@ -1,37 +1,37 @@
 import React, { useEffect, PropsWithChildren } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
-import { useFonts as useInter } from '@expo-google-fonts/inter';
-import { useFonts as useBarlow } from '@expo-google-fonts/barlow-condensed';
 import {
-  Inter_400Regular,
-  Inter_500Medium,
-  Inter_700Bold,
-} from '@expo-google-fonts/inter';
+  useFonts as useOutfit,
+  Outfit_400Regular,
+  Outfit_500Medium,
+  Outfit_600SemiBold,
+  Outfit_700Bold,
+} from '@expo-google-fonts/outfit';
 import {
-  BarlowCondensed_700Bold_Italic,
-} from '@expo-google-fonts/barlow-condensed';
-import { useFonts as useLocalFonts } from 'expo-font';
+  useFonts as useSpectral,
+  Spectral_400Regular,
+  Spectral_500Medium,
+  Spectral_700Bold,
+} from '@expo-google-fonts/spectral';
 
-// Don’t auto-hide until fonts are ready
+// Don't auto-hide until fonts are ready
 SplashScreen.preventAutoHideAsync().catch(() => { });
 
 export default function FontProvider({ children }: PropsWithChildren) {
-  const [interLoaded] = useInter({
-    Inter_400Regular,
-    Inter_500Medium,
-    Inter_700Bold,
+  const [outfitLoaded] = useOutfit({
+    Outfit_400Regular,
+    Outfit_500Medium,
+    Outfit_600SemiBold,
+    Outfit_700Bold,
   });
 
-  const [barlowLoaded] = useBarlow({
-    BarlowCondensed_700Bold_Italic,
+  const [spectralLoaded] = useSpectral({
+    Spectral_400Regular,
+    Spectral_500Medium,
+    Spectral_700Bold,
   });
 
-  const [localLoaded] = useLocalFonts({
-    RoadRage: require('../../assets/fonts/RoadRage.otf'),
-    // If you later want your other local fonts, add here the same way.
-  });
-
-  const fontsReady = interLoaded && barlowLoaded && localLoaded;
+  const fontsReady = outfitLoaded && spectralLoaded;
 
   useEffect(() => {
     if (fontsReady) {
@@ -39,7 +39,7 @@ export default function FontProvider({ children }: PropsWithChildren) {
     }
   }, [fontsReady]);
 
-  if (!fontsReady) return null; // Block UI until fonts are ready (Splash stays up)
+  if (!fontsReady) return null;
 
   return <>{children}</>;
 }

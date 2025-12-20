@@ -1,0 +1,29 @@
+{
+  "cli": {
+    "version": ">= 7.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "distribution": "store",
+      "env": {
+        "EXPO_PUBLIC_DATA_MODE": "live",
+        "EXPO_PUBLIC_AUTH_MODE": "firebase"
+      },
+      "hooks": {
+        "post-install": {
+          "command": "node scripts/check-firebase.js"
+        }
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

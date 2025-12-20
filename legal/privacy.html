@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - SubSync</title>
+    <meta
+      name="description"
+      content="SubSync Privacy Policy - Learn how we collect, use, and protect your data."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-primary: #07080a;
+        --bg-secondary: #0f1114;
+        --bg-elevated: #181b20;
+        --text-primary: #f5f5f7;
+        --text-secondary: #8a8f98;
+        --text-tertiary: #4a4e56;
+        --accent: #d4a574;
+        --accent-muted: rgba(212, 165, 116, 0.15);
+        --border: #1e2228;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 24px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 48px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, #d4a574, #c7956d, #a67c52);
+        border-radius: 16px;
+        margin-bottom: 24px;
+      }
+
+      .logo svg {
+        width: 32px;
+        height: 32px;
+        fill: #07080a;
+      }
+
+      h1 {
+        font-family: "Spectral", Georgia, serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #d4a574, #f5e6d3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .last-updated {
+        font-size: 0.875rem;
+        color: var(--text-tertiary);
+      }
+
+      h2 {
+        font-family: "Spectral", Georgia, serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 40px;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-top: 24px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+      }
+
+      ul,
+      ol {
+        color: var(--text-secondary);
+        padding-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .highlight-box {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 24px 0;
+      }
+
+      .highlight-box.accent {
+        border-color: var(--accent);
+        background-color: var(--accent-muted);
+      }
+
+      .highlight-box p:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+
+      footer p {
+        font-size: 0.875rem;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 16px;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .nav-links a:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.25rem;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+            />
+          </svg>
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: December 21, 2024</p>
+      </header>
+
+      <main>
+        <div class="highlight-box accent">
+          <p>
+            <strong>Summary:</strong> SubSync is designed with privacy first.
+            Your subscription data is stored locally on your device by default.
+            If you choose to create an account, your data is encrypted and
+            synced securely using Firebase. We never sell your data.
+          </p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>
+          SubSync ("we", "our", or "us") is committed to protecting your
+          privacy. This Privacy Policy explains how we collect, use, disclose,
+          and safeguard your information when you use our mobile application.
+        </p>
+        <p>
+          Please read this privacy policy carefully. If you do not agree with
+          the terms of this privacy policy, please do not access the
+          application.
+        </p>
+
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+          <li>
+            <strong>Account Information:</strong> If you choose to create an
+            account, we collect your email address and display name.
+          </li>
+          <li>
+            <strong>Subscription Data:</strong> Information about your
+            subscriptions including names, amounts, billing cycles, and renewal
+            dates. This data is stored locally on your device and optionally
+            synced to the cloud if you have an account.
+          </li>
+          <li>
+            <strong>Preferences:</strong> Your app settings such as currency,
+            language, and notification preferences.
+          </li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <ul>
+          <li>
+            <strong>Device Information:</strong> Device type, operating system
+            version, and unique device identifiers for app functionality.
+          </li>
+          <li>
+            <strong>Usage Data:</strong> Anonymous analytics about app usage to
+            improve our service.
+          </li>
+          <li>
+            <strong>Crash Reports:</strong> If the app crashes, we may receive
+            diagnostic information to help fix issues.
+          </li>
+        </ul>
+
+        <h3>2.3 Information We Do NOT Collect</h3>
+        <ul>
+          <li>Payment card numbers or bank account details</li>
+          <li>Passwords to your subscription services</li>
+          <li>Location data</li>
+          <li>Contacts or photos</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and maintain the SubSync application</li>
+          <li>Sync your data across devices (if you have an account)</li>
+          <li>
+            Send renewal reminders and notifications (with your permission)
+          </li>
+          <li>Improve and optimize the app experience</li>
+          <li>Respond to customer support requests</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>4. Data Storage and Security</h2>
+
+        <h3>4.1 Local Storage</h3>
+        <p>
+          By default, all your subscription data is stored locally on your
+          device using secure storage mechanisms. This data never leaves your
+          device unless you explicitly create an account for cloud sync.
+        </p>
+
+        <h3>4.2 Cloud Storage</h3>
+        <p>
+          If you create an account, your data is synced to Google Firebase,
+          which provides enterprise-grade security including:
+        </p>
+        <ul>
+          <li>Data encryption in transit (TLS/SSL)</li>
+          <li>Data encryption at rest (AES-256)</li>
+          <li>Secure authentication</li>
+          <li>Regular security audits</li>
+        </ul>
+
+        <h3>4.3 Data Retention</h3>
+        <p>
+          We retain your data for as long as your account is active. You can
+          delete your account and all associated data at any time from the app
+          settings.
+        </p>
+
+        <h2>5. Third-Party Services</h2>
+        <p>SubSync uses the following third-party services:</p>
+        <ul>
+          <li>
+            <strong>Google Firebase:</strong> For authentication and cloud data
+            storage.
+            <a
+              href="https://firebase.google.com/support/privacy"
+              target="_blank"
+              rel="noopener"
+              >Firebase Privacy Policy</a
+            >
+          </li>
+          <li>
+            <strong>Google AdMob:</strong> For displaying advertisements in the
+            free version.
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener"
+              >Google Privacy Policy</a
+            >
+          </li>
+          <li>
+            <strong>Expo:</strong> For app updates and push notifications.
+            <a href="https://expo.dev/privacy" target="_blank" rel="noopener"
+              >Expo Privacy Policy</a
+            >
+          </li>
+        </ul>
+
+        <h2>6. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of your personal data</li>
+          <li>
+            <strong>Correction:</strong> Update or correct your information
+          </li>
+          <li>
+            <strong>Deletion:</strong> Delete your account and all associated
+            data
+          </li>
+          <li><strong>Export:</strong> Export your data in JSON format</li>
+          <li>
+            <strong>Opt-out:</strong> Disable notifications and personalized ads
+          </li>
+        </ul>
+        <p>
+          To exercise these rights, use the settings within the app or contact
+          us at the email below.
+        </p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>
+          SubSync is not intended for children under 13 years of age. We do not
+          knowingly collect personal information from children under 13. If we
+          discover that a child under 13 has provided us with personal
+          information, we will delete it immediately.
+        </p>
+
+        <h2>8. International Data Transfers</h2>
+        <p>
+          If you are accessing SubSync from outside the United States, please be
+          aware that your information may be transferred to, stored, and
+          processed in the United States where our servers are located. By using
+          SubSync, you consent to this transfer.
+        </p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. We will notify
+          you of any changes by posting the new Privacy Policy on this page and
+          updating the "Last updated" date. You are advised to review this
+          Privacy Policy periodically for any changes.
+        </p>
+
+        <h2>10. Contact Us</h2>
+        <div class="highlight-box">
+          <p>
+            If you have any questions about this Privacy Policy, please contact
+            us:
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:privacy@subsync.app">privacy@subsync.app</a>
+          </p>
+          <p>
+            <strong>Website:</strong>
+            <a href="https://subsync.app">subsync.app</a>
+          </p>
+        </div>
+      </main>
+
+      <footer>
+        <p>© 2024 SubSync. All rights reserved.</p>
+        <div class="nav-links">
+          <a href="./terms.html">Terms of Service</a>
+          <a href="https://subsync.app">Back to Home</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

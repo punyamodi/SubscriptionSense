@@ -1,8 +1,38 @@
-// Emulator-only, allow all reads/writes.
-// See docs/09-security-rules.md for production rules.
+// SubSync Production Firestore Security Rules
+// IMPORTANT: Deploy these rules before app store submission
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} { allow read, write: if true; }
+    // Users collection - only owner can read/write their own document
+    match /Users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    
+    // Subscriptions collection - users can only access their own subscriptions
+    match /Subscriptions/{subId} {
+      allow read: if request.auth != null && 
+                  resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && 
+                    request.resource.data.userId == request.auth.uid;
+      allow update, delete: if request.auth != null && 
+                            resource.data.userId == request.auth.uid;
+    }
+    
+    // App Config - public read for version checking
+    match /Config/{docId} {
+      allow read: if true;
+      allow write: if false; // Admin only via Firebase Console
+    }
+    
+    // Usernames collection - public read for uniqueness check, write via Cloud Functions only
+    match /Usernames/{uname} {
+      allow read: if true;
+      allow write: if false; // Write via Cloud Function only
+    }
+    
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
   }
 }

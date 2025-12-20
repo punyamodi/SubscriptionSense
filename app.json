@@ -1,27 +1,29 @@
 {
   "expo": {
-    "name": "mobile-app-starterkit",
-    "slug": "mobile-app-starterkit",
-    "version": "1.0.0",
+    "name": "SubSync",
+    "slug": "subsync",
+    "version": "2.0.0",
+    "scheme": "subsync",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0A0E14"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.subsync.app",
+      "buildNumber": "2.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0A0E14"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "package": "com.subsync.app",
+      "versionCode": 20000
     },
     "web": {
       "favicon": "./assets/favicon.png"

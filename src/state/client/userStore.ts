@@ -6,6 +6,7 @@ type UserState = {
   uid: string | null;
   username: string | null;
   email: string | null;
+  avatar: string | null;
   isLoggedIn: boolean;
   newUser: boolean;
   setLoggedIn: (v: boolean) => void;
@@ -13,6 +14,7 @@ type UserState = {
   setUid: (v: string | null) => void;
   setUsername: (v: string | null) => void;
   setEmail: (v: string | null) => void;
+  setAvatar: (v: string | null) => void;
 };
 
 const kv = makeKV();
@@ -23,13 +25,15 @@ export const useUserStore = create<UserState>()(
       uid: null,
       username: null,
       email: null,
+      avatar: null,
       isLoggedIn: false,
       newUser: true,
       setLoggedIn: (v) => set({ isLoggedIn: v }),
       setNewUser: (v) => set({ newUser: v }),
       setUid: (v) => set({ uid: v }),
       setUsername: (v) => set({ username: v }),
-      setEmail: (v) => set({ email: v }), // ✅ fixed
+      setEmail: (v) => set({ email: v }),
+      setAvatar: (v) => set({ avatar: v }),
     }),
     {
       name: 'user-data',

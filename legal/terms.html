@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SubSync</title>
+    <meta name="description" content="SubSync Terms of Service - Read our terms and conditions for using the app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #07080A;
+            --bg-secondary: #0F1114;
+            --bg-elevated: #181B20;
+            --text-primary: #F5F5F7;
+            --text-secondary: #8A8F98;
+            --text-tertiary: #4A4E56;
+            --accent: #D4A574;
+            --accent-muted: rgba(212, 165, 116, 0.15);
+            --border: #1E2228;
+            --success: #7ECFA3;
+            --warning: #E8B86D;
+            --error: #D97373;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #D4A574, #C7956D, #A67C52);
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: #07080A;
+        }
+
+        h1 {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #D4A574, #F5E6D3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        h2 {
+            font-family: 'Spectral', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul, ol {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-box.accent {
+            border-color: var(--accent);
+            background-color: var(--accent-muted);
+        }
+
+        .highlight-box.warning {
+            border-color: var(--warning);
+            background-color: rgba(232, 184, 109, 0.1);
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last updated: December 21, 2024</p>
+        </header>
+
+        <main>
+            <div class="highlight-box accent">
+                <p><strong>Summary:</strong> SubSync is a subscription tracking app. Use it responsibly, keep your data accurate, and enjoy managing your subscriptions. We're not liable for any financial decisions you make based on the app's information.</p>
+            </div>
+
+            <h2>1. Agreement to Terms</h2>
+            <p>By downloading, installing, or using SubSync ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+            <p>These Terms constitute a legally binding agreement between you and SubSync ("we", "us", or "our") governing your use of the App.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>SubSync is a mobile application designed to help you:</p>
+            <ul>
+                <li>Track and manage your recurring subscriptions</li>
+                <li>Receive reminders about upcoming renewals</li>
+                <li>Analyze your subscription spending</li>
+                <li>Set and monitor budgets for subscriptions</li>
+                <li>Sync your data across multiple devices (with an account)</li>
+            </ul>
+            <p>SubSync is an organizational tool only. We do not process payments, cancel subscriptions on your behalf, or integrate directly with any subscription services.</p>
+
+            <h2>3. User Accounts</h2>
+            
+            <h3>3.1 Account Creation</h3>
+            <p>You may use SubSync without creating an account. However, to sync your data across devices, you must create an account using your email address or a supported authentication provider (Google, Apple).</p>
+
+            <h3>3.2 Account Responsibilities</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account credentials</li>
+                <li>All activities that occur under your account</li>
+                <li>Ensuring your account information is accurate and up-to-date</li>
+                <li>Notifying us immediately of any unauthorized use</li>
+            </ul>
+
+            <h3>3.3 Account Termination</h3>
+            <p>You may delete your account at any time from the app settings. We reserve the right to suspend or terminate accounts that violate these Terms.</p>
+
+            <h2>4. Acceptable Use</h2>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Use the App for any illegal purpose</li>
+                <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+                <li>Interfere with or disrupt the App's functionality</li>
+                <li>Reverse engineer, decompile, or attempt to extract the source code</li>
+                <li>Use automated systems or bots to access the App</li>
+                <li>Upload malicious content or code</li>
+                <li>Impersonate any person or entity</li>
+            </ul>
+
+            <h2>5. User Content</h2>
+            <p>You retain ownership of all data you enter into SubSync ("User Content"). By using the App, you grant us a limited license to store, process, and display your User Content solely for the purpose of providing the service to you.</p>
+            <p>You are solely responsible for the accuracy of your User Content. SubSync does not verify or validate the subscription information you enter.</p>
+
+            <h2>6. Intellectual Property</h2>
+            <p>The App, including its design, features, code, graphics, and content (excluding User Content), is owned by SubSync and protected by intellectual property laws. You may not:</p>
+            <ul>
+                <li>Copy, modify, or distribute the App</li>
+                <li>Use our trademarks without permission</li>
+                <li>Create derivative works based on the App</li>
+            </ul>
+
+            <h2>7. Disclaimer of Warranties</h2>
+            <div class="highlight-box warning">
+                <p><strong>IMPORTANT:</strong> SubSync is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied. We do not guarantee that:</p>
+                <ul style="margin-bottom: 0;">
+                    <li>The App will be error-free or uninterrupted</li>
+                    <li>The information displayed is accurate or complete</li>
+                    <li>The App will meet your specific requirements</li>
+                </ul>
+            </div>
+            <p>SubSync is an informational tool only. We are not a financial advisor, and the App does not provide financial advice. You should consult appropriate professionals before making financial decisions.</p>
+
+            <h2>8. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, SubSync and its affiliates, officers, employees, agents, and licensors shall NOT be liable for:</p>
+            <ul>
+                <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Any loss of profits, data, or business opportunities</li>
+                <li>Any damages arising from your use or inability to use the App</li>
+                <li>Any financial losses resulting from subscription management decisions</li>
+                <li>Any issues arising from third-party services or integrations</li>
+            </ul>
+            <p>In no event shall our total liability exceed the amount you paid for the App in the past 12 months, or $10 USD, whichever is greater.</p>
+
+            <h2>9. Indemnification</h2>
+            <p>You agree to indemnify and hold harmless SubSync and its affiliates from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from:</p>
+            <ul>
+                <li>Your use of the App</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any third-party rights</li>
+                <li>Your User Content</li>
+            </ul>
+
+            <h2>10. Third-Party Services</h2>
+            <p>The App may contain links to or integrations with third-party services. We are not responsible for:</p>
+            <ul>
+                <li>The content, privacy policies, or practices of third-party services</li>
+                <li>Any damage or loss caused by your use of third-party services</li>
+            </ul>
+            <p>Your use of third-party services is at your own risk and subject to their respective terms.</p>
+
+            <h2>11. Modifications to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by:</p>
+            <ul>
+                <li>Posting the updated Terms in the App</li>
+                <li>Updating the "Last updated" date</li>
+                <li>Sending a notification (for significant changes)</li>
+            </ul>
+            <p>Your continued use of the App after changes become effective constitutes acceptance of the new Terms.</p>
+
+            <h2>12. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.</p>
+            <p>Any disputes arising from these Terms or your use of the App shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.</p>
+
+            <h2>13. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+            <h2>14. Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and SubSync regarding the use of the App and supersede any prior agreements.</p>
+
+            <h2>15. Contact Information</h2>
+            <div class="highlight-box">
+                <p>If you have any questions about these Terms, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:legal@subsync.app">legal@subsync.app</a></p>
+                <p><strong>Website:</strong> <a href="https://subsync.app">subsync.app</a></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 SubSync. All rights reserved.</p>
+            <div class="nav-links">
+                <a href="./privacy.html">Privacy Policy</a>
+                <a href="https://subsync.app">Back to Home</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

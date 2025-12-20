@@ -4,6 +4,7 @@ import { Image } from 'react-native';
 import LandingScreen from '../screens/auth/LandingScreen';
 import SignInScreen from '../screens/auth/SignInScreen';
 import SelectUsernameScreen from '../screens/onboarding/SelectUsernameScreen';
+import SetupPreferencesScreen from '../screens/onboarding/SetupPreferencesScreen';
 import SignUpScreen from '../screens/onboarding/SignUpScreen';
 import { useAssetsStore } from '../state/client/assetsStore';
 
@@ -11,6 +12,7 @@ type AuthStackParamList = {
   Landing: undefined;
   SignIn: undefined;
   Username: undefined;
+  Preferences: undefined;
   SignUp: undefined;
 };
 
@@ -30,37 +32,28 @@ export default function AuthNavigator() {
 
   return (
     <Stack.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={{
         headerTitleAlign: 'center',
         headerShadowVisible: false,
-        headerStyle: { backgroundColor: '#f6f4f6' },
-        headerTintColor: '#232327',
-        headerTitle: () => {
-          const source = route.name === 'SignUp' ? logoWhite : logoBlack;
-          return source ? <HeaderLogo source={source} /> : null;
-        },
-      })}
+        headerTransparent: true,
+        headerTintColor: '#FFFFFF',
+        headerTitle: () => (logoWhite ? <HeaderLogo source={logoWhite} /> : null),
+      }}
     >
       <Stack.Screen name="Landing" options={{ headerShown: false }} component={LandingScreen} />
       <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
       <Stack.Screen name="Username" component={SelectUsernameScreen} />
-      {/* Showcase of some header screen specific overrides of header options */}
+      <Stack.Screen 
+        name="Preferences" 
+        component={SetupPreferencesScreen} 
+        options={{ animation: 'fade' }}
+      />
       <Stack.Screen
         name="SignUp"
         component={SignUpScreen}
         options={{
           headerBackVisible: false,
-          // headerBackTitle: 'Back',
-          // // headerBlurEffect: 'extraLight',
-          // // headerBackTitleStyle: {
-          // //   fontSize: 28,
-          // // },
-          // headerTintColor: '#ef1f65',
-          headerTransparent: true,
           animation: 'fade',
-          headerStyle: {
-            backgroundColor: 'transparent', // Ensures header has no background
-          },
         }}
       />
     </Stack.Navigator>

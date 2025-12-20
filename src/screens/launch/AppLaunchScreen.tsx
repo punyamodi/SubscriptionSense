@@ -1,85 +1,107 @@
 // src/screens/launch/AppLaunchScreen.tsx
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
-import { Video, ResizeMode } from 'expo-av';
-import { Image } from 'expo-image';
-import { useAssetsStore } from '../../state/client/assetsStore';
+import { View, StyleSheet, Animated } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { AppText } from '../../components/common/AppText';
+import { Colors } from '../../theme/colors';
 
 type Props = { onAnimationEnd: () => void; maxDurationMs?: number };
 
-export default function AppLaunchScreen({ onAnimationEnd, maxDurationMs = 4500 }: Props) {
-  const videoRef = useRef<Video>(null);
-  const [started, setStarted] = useState(false);
+export default function AppLaunchScreen({ onAnimationEnd, maxDurationMs = 2500 }: Props) {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.8)).current;
   const finishedRef = useRef(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 👉 URI was preloaded by AssetsBootstrapper and stored in Zustand
-  const launchVideoUri = useAssetsStore((s) => s.cachedAssets.launchVideo as string | undefined);
-  const logoBlack = useAssetsStore((s) => s.cachedAssets.logoBlack);
-  const setCachedAssets = useAssetsStore((s) => s.setCachedAssets);
-
-  const cleanupVideo = useCallback(async () => {
-    try {
-      await videoRef.current?.unloadAsync();
-    } catch {
-      // ignore unload errors
-    } finally {
-      // Clear reference to hint GC and avoid reusing after launch
-      setCachedAssets({ launchVideo: undefined });
-    }
-  }, [setCachedAssets]);
-
-  const finish = useCallback(async () => {
+  const finish = useCallback(() => {
     if (finishedRef.current) return;
     finishedRef.current = true;
-
-    await cleanupVideo();
-
-    // Small delay so navigation feels smooth after the last frame
-    setTimeout(() => {
+    
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start(() => {
       onAnimationEnd();
-    }, 120);
-  }, [cleanupVideo, onAnimationEnd]);
+    });
+  }, [fadeAnim, onAnimationEnd]);
 
   useEffect(() => {
-    // Hard stop in case the video never calls didJustFinish
-    timeoutRef.current = setTimeout(finish, maxDurationMs);
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [finish, maxDurationMs]);
+    // Animate in
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 600,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        tension: 50,
+        friction: 7,
+        useNativeDriver: true,
+      }),
+    ]).start();
 
-  const onStatus = (s: any) => {
-    if (!s || !('isLoaded' in s)) return;
-    if (s.isLoaded && !started) setStarted(true);
-    if (s.isLoaded && s.didJustFinish) finish();
-  };
+    // Auto-transition after delay
+    const timeout = setTimeout(finish, maxDurationMs);
+    return () => clearTimeout(timeout);
+  }, [fadeAnim, scaleAnim, finish, maxDurationMs]);
 
   return (
-    <View style={styles.container}>
-      {launchVideoUri ? (
-        <Video
-          ref={videoRef}
-          source={{ uri: launchVideoUri }}
-          style={StyleSheet.absoluteFillObject}
-          resizeMode={ResizeMode.COVER}
-          shouldPlay
-          isMuted={Platform.OS === 'web'} // allow autoplay on web
-          isLooping={false}
-          onPlaybackStatusUpdate={onStatus}
-          onError={(_e) => finish()}
-        />
-      ) : (
-        // Fallback still while waiting for preloaded URI (or if preload failed)
-
-        !launchVideoUri && logoBlack ? (
-          <Image source={logoBlack} style={StyleSheet.absoluteFillObject} contentFit="cover" />
-        ) : null
-      )}
-    </View>
+    <LinearGradient
+      colors={[Colors.background, '#0D1117', Colors.background]}
+      style={styles.container}
+    >
+      <Animated.View 
+        style={[
+          styles.content, 
+          { 
+            opacity: fadeAnim,
+            transform: [{ scale: scaleAnim }]
+          }
+        ]}
+      >
+        <View style={styles.logoContainer}>
+          <LinearGradient
+            colors={Colors.gradient.premium}
+            style={styles.logoGradient}
+          >
+            <Ionicons name="wallet-outline" size={56} color={Colors.text.inverse} />
+          </LinearGradient>
+        </View>
+        
+        <AppText variant="serifBold" size="4xl" align="center" style={styles.title}>
+          SubSync
+        </AppText>
+        
+        <AppText variant="regular" size="base" color={Colors.text.secondary} align="center">
+          Take control of your subscriptions
+        </AppText>
+      </Animated.View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#121212' },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  content: {
+    alignItems: 'center',
+  },
+  logoContainer: {
+    marginBottom: 24,
+  },
+  logoGradient: {
+    width: 120,
+    height: 120,
+    borderRadius: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    marginBottom: 8,
+  },
 });
