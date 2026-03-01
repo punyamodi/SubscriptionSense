@@ -63,7 +63,7 @@ export default function AppLaunchScreen({ onAnimationEnd, maxDurationMs = 2500 }
       >
         <View style={styles.logoContainer}>
           <LinearGradient
-            colors={Colors.gradient.premium}
+            colors={Colors.gradient.premium as any}
             style={styles.logoGradient}
           >
             <Ionicons name="wallet-outline" size={56} color={Colors.text.inverse} />

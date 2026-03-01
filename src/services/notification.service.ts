@@ -44,7 +44,7 @@ export class NotificationService {
             data: { subscriptionId: subscription.id },
           },
           // Explicit date trigger to satisfy TS in SDK 54+
-          trigger: { date: triggerDate },
+          trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: triggerDate },
           identifier: `${subscription.id}_1day`,
         });
       }
@@ -60,7 +60,7 @@ export class NotificationService {
               body: `The trial for ${subscription.name} ends in 3 days. Cancel to avoid charges.`,
               data: { subscriptionId: subscription.id },
             },
-            trigger: { date: trialTrigger },
+            trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: trialTrigger },
             identifier: `${subscription.id}_trial`,
           });
         }
@@ -82,9 +82,11 @@ export class NotificationService {
 }
 
 Notifications.setNotificationHandler({
-  handleNotification: async (): Promise<Notifications.NotificationBehavior> => ({
+  handleNotification: async () => ({
     shouldShowAlert: true,
     shouldPlaySound: true,
     shouldSetBadge: false,
+    shouldShowBanner: true,
+    shouldShowList: true,
   }),
 });

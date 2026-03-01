@@ -15,14 +15,7 @@ const linking = {
   config: {
     screens: {
       // If logged in
-      MainTabs: {
-        screens: {
-          Dashboard: 'dashboard',
-          Calendar: 'calendar',
-          SubscriptionList: 'subscriptions',
-          Settings: 'settings',
-        },
-      },
+      MainTabs: 'dashboard',
       AddSubscription: 'add',
       EditProfile: 'profile',
       
@@ -32,7 +25,7 @@ const linking = {
       Landing: 'welcome',
     },
   },
-};
+} as any;
 
 export default function AppNavigator() {
   const { isDark, colors } = useTheme();

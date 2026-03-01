@@ -17,8 +17,6 @@
  */
 
 // ═══════════════════════════════════════════════════════════════
-// FONT FAMILIES
-// ═══════════════════════════════════════════════════════════════
 export const Fonts = {
   // Geometric Sans - UI Text (Outfit family)
   SansRegular: 'Outfit_400Regular',
@@ -33,6 +31,13 @@ export const Fonts = {
   SerifMedium: 'Spectral_500Medium',
   SerifSemiBold: 'Spectral_600SemiBold',
   SerifBold: 'Spectral_700Bold',
+
+  // Legacy/External mapping for backwards compatibility
+  InterRegular: 'Outfit_400Regular',
+  InterMedium: 'Outfit_500Medium',
+  InterBold: 'Outfit_700Bold',
+  RoadRage: 'Spectral_700Bold',
+  BarlowCondensed700Italic: 'Spectral_700Bold',
 } as const;
 
 // ═══════════════════════════════════════════════════════════════

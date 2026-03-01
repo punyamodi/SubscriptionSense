@@ -1,69 +1,174 @@
-# 🎉 mobile-app-starterkit - A Simple Start for Mobile Apps
+# SubSync - Subscription Management App
 
-## 📥 Download Now
-[![Download mobile-app-starterkit](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip)](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip)
+> A beautiful, feature-rich mobile app to track and manage all your subscriptions in one place.
 
-## 🚀 Getting Started
-Welcome to the mobile-app-starterkit! This template provides a solid foundation for your mobile application using React Native. It allows you to run your app instantly in Expo Go and switch to an EAS Dev Client easily. 
+## 📱 App Showcase
 
-## 📋 Features
-- **Built-in Authentication**: Simplify user login with pre-made authentication features.
-- **Firebase Integration**: Store and manage data using Firebase, a reliable backend service.
-- **MMKV for Storage**: Use MMKV for fast and efficient persistent storage.
-- **State Management**: Manage your app's state seamlessly with Zustand.
-- **User-Friendly Design**: A clean UI/UX to help you create attractive applications.
-- **TypeScript Support**: Write safer, more predictable code with TypeScript.
+### Dashboard Overview
+Track all your subscriptions at a glance with smart insights and spending analytics.
 
-## 💻 System Requirements
-To run this mobile app template, you need:
-- A computer with macOS, Windows, or Linux.
-- https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip installed on your machine. You can download it from [https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip official website](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip).
-- An Expo Go account, which you can set up for free.
-- An Android or iOS device, or an emulator, to run the application.
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.18.jpeg" width="300" alt="Dashboard - Monthly commitment and renewal insights" />
 
-## 🔗 Download & Install
-To get started, visit this page to download the latest version: [Release Page](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip).
+### Manage Subscriptions
+View, organize, and filter your active subscriptions with detailed information.
 
-1. Go to the [Releases page](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip).
-2. Choose the latest release version.
-3. Download the files for your operating system.
-4. Follow the included instructions to set up the application.
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.18 (1).jpeg" width="300" alt="Subscriptions list with Netflix and Hitser examples" />
 
-After downloading:
-- Extract the files if they are compressed.
-- Open your terminal or command prompt.
-- Navigate to the folder where you downloaded the files.
-- Run the following command to install the required dependencies:
-  ```
-  npm install
-  ```
-- Start your application with:
-  ```
-  npm start
-  ```
-- Use Expo Go on your mobile device to scan the QR code displayed in your terminal. 
+### Renewal Calendar
+Plan ahead with an interactive calendar showing upcoming subscription renewals by month.
 
-## 🛠️ Usage
-Once your application is running in Expo Go:
-- You will see the default template loaded on your device.
-- Navigate through the app to explore features such as authentication and data storage.
-- Modify the code as needed to fit your specific requirements.
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.19.jpeg" width="300" alt="Calendar view for renewal schedule" />
 
-## 📦 Contributing
-If you wish to contribute to this project, here’s how:
-1. Fork the repository on GitHub.
-2. Create a new branch for your feature.
-3. Make changes and commit them with clear messages.
-4. Push your branch to your forked repository.
-5. Open a pull request for review.
+### Financial Analytics
+Get detailed breakdowns of spending by category and smart insights about your subscription habits.
 
-## 📞 Support
-For help or inquiries:
-- Check the [issue tracker](https://raw.githubusercontent.com/luckyzeus/mobile-app-starterkit/main/partimen/mobile-app-starterkit.zip).
-- Join the community discussions.
-- Reach out via email for direct support.
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.19 (1).jpeg" width="300" alt="Analytics with category breakdown and spending insights" />
 
-## 📖 License
-This project is licensed under the MIT License. You can view the details in the LICENSE file in the repository.
+### Spending Insights
+Visualize your subscription spending with advanced metrics and trends.
 
-Enjoy building your mobile app with the mobile-app-starterkit!
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.19 (2).jpeg" width="300" alt="Insights showing category breakdown pie chart" />
+
+### Customizable Settings
+Control your preferences including language, theme, notifications, and data management.
+
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.20.jpeg" width="300" alt="Settings with preferences and account options" />
+
+<img src="./images/WhatsApp Image 2026-03-02 at 02.03.20 (1).jpeg" width="300" alt="Settings menu with more options" />
+
+## 🎯 Key Features
+
+- **💰 Smart Dashboard** - See your monthly commitment, daily burn rate, and active subscriptions at a glance
+- **📅 Renewal Calendar** - Track upcoming renewals with an interactive calendar view
+- **📊 Analytics & Insights** - Understand your spending patterns with category breakdowns and trends
+- **🔍 Subscription Search** - Easily find subscriptions with built-in search functionality
+- **🏷️ Smart Categorization** - Subscriptions organized by category (Streaming, Software, etc.)
+- **🌙 Dark Mode** - Easy on the eyes with native dark theme support
+- **🔔 Renewal Notifications** - Get alerts before your subscriptions renew
+- **🌍 Multi-Language Support** - Available in multiple languages
+- **☁️ Cloud Sync** - Sync your data across devices (when connected to Firebase)
+- **💾 Data Export/Import** - Download your data as JSON or restore from backups
+
+## 🛠️ Tech Stack
+
+- **React Native & Expo** - Cross-platform mobile development
+- **TypeScript** - Type-safe code
+- **React Navigation** - Smooth app navigation
+- **Zustand** - Lightweight state management
+- **React Query** - Data fetching and caching
+- **Firebase** - Backend and authentication
+- **React Native Reanimated** - Smooth animations
+- **Expo Linear Gradient** - Beautiful gradient UI components
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd mobile-app-starterkit
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+### Running on Your Phone
+
+1. Install **Expo Go** from your app store
+2. Scan the QR code from the terminal
+3. The app loads instantly on your device!
+
+### Development Commands
+
+```bash
+# Start with Expo Go
+npm start
+
+# Run on Android emulator
+npm run android
+
+# Run on iOS simulator
+npm run ios
+
+# Run in web browser
+npm run web
+
+# Start with seed data (demo mode)
+npm run dev:seed
+
+# Clear cache and restart with seed data
+npm run dev:seed:clear
+```
+
+## 📋 Project Structure
+
+```
+src/
+├── app/                    # Navigation and entry points
+├── screens/               # App screens (Dashboard, Calendar, etc.)
+├── components/            # Reusable UI components
+├── services/              # Business logic and API calls
+├── state/                 # Zustand stores (global state)
+├── theme/                 # Design tokens and styling
+├── config/                # App configuration
+└── types/                 # TypeScript type definitions
+```
+
+## 🔐 Authentication
+
+The app supports both mock authentication (for development) and Firebase authentication (for production). Switch between modes via environment variables.
+
+## 🎨 Design System
+
+The app features a premium dark theme with:
+- **Obsidian Finance** typography system using Spectral (serif) and Outfit (sans-serif)
+- Golden accent colors (#B8860B) for premium feel
+- Smooth animations with React Native Reanimated
+- Responsive layouts for all screen sizes
+
+## 🔄 Data Persistence
+
+- **MMKV Storage** - Fast, encrypted local data storage
+- **Firebase Realtime Database** - Cloud data sync (optional)
+- **React Query** - Intelligent caching and data management
+
+## 📈 Future Roadmap
+
+- [ ] Bill splitting feature
+- [ ] AI-powered savings recommendations
+- [ ] Subscription sharing insights
+- [ ] Integration with payment methods
+- [ ] Web dashboard
+- [ ] Family/household sharing
+- [ ] Advanced analytics and trends
+
+## 🤝 Contributing
+
+We'd love to see community contributions! Here's how:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+Please ensure your code follows our TypeScript and style conventions.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Expo](https://expo.dev)
+- State management with [Zustand](https://github.com/pmndrs/zustand)
+- Data fetching with [React Query](https://tanstack.com/query)
+- Animations powered by [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated)
+
+---
+
+**SubSync** - Take control of your subscriptions, one renewal at a time. 🚀

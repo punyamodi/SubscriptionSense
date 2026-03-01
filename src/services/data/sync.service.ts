@@ -56,7 +56,7 @@ import NetInfo from '@react-native-community/netinfo';
 
 export const useBackgroundSync = () => {
   useEffect(() => {
-    const unsubscribe = NetInfo.addEventListener(state => {
+    const unsubscribe = NetInfo.addEventListener((state: any) => {
       if (state.isConnected && isLive) {
         startSyncService();
       }

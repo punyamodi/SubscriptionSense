@@ -233,7 +233,7 @@ export const SubscriptionListScreen = () => {
             onArchive={() => archiveSubscription(item.id)}
             onRestore={() => handleRestore(item.id)}
             onDelete={() => removeSubscription(item.id)}
-            onEdit={() => navigation.navigate('AddSubscription' as never, { subscriptionId: item.id } as never)}
+            onEdit={() => (navigation as any).navigate('AddSubscription', { subscriptionId: item.id })}
           />
         )}
         ListEmptyComponent={() => (

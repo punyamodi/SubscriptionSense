@@ -119,8 +119,7 @@ function SubscriptionBootstrapper() {
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ErrorBoundary>
-        <FontProvider>
+      <FontProvider>
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
             <SafeAreaProvider>
@@ -142,8 +141,7 @@ export default function App() {
             </SafeAreaProvider>
           </I18nextProvider>
         </QueryClientProvider>
-        </FontProvider>
-      </ErrorBoundary>
+      </FontProvider>
     </GestureHandlerRootView>
   );
 }
