@@ -1,6 +1,15 @@
 # SubSync - Subscription Management App
 
-> A beautiful, feature-rich mobile app to track and manage all your subscriptions in one place.
+<p align="center">
+  <strong>Never miss a subscription renewal again. Track, manage, and optimize all your subscriptions in one beautiful app.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React%20Native-0.81.5-61DAFB?logo=react&logoColor=white" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-54-000020?logo=expo&logoColor=white" alt="Expo" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Firebase-12.3-FFCA28?logo=firebase&logoColor=white" alt="Firebase" />
+</p>
 
 ## 📱 App Showcase
 
